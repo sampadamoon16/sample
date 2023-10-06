@@ -1,0 +1,9 @@
+package.json:  library and dependencies 
+config.js: next js configuration
+
+
+differnce between dev dependencies and dependencies
+ESlint :-  
+tailwind css
+
+next js:

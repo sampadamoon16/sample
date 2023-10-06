@@ -1,0 +1,84 @@
+await axios.post('http://localhost:5000/api/admin/category/addcategory', {
+                Pcategory_id,
+                category_name
+
+
+<Fab color="secondary" aria-label="edit" size="small">
+                                    <EditIcon />
+                                </Fab> 
+
+
+<div className='m-5, p-5'>
+            <Box sx={{ flexGrow: 1 }}>
+                <Grid container spacing={2}>
+                    <Grid item xs={4}>
+                        <Item style={{ background: "#b2dfdb", height: "500px" }}>
+                            <h2 className='mt-4' style={{ color: "#006064" }}>Add New Product</h2>
+                            <div className='mt-5'>
+                                <TextField
+                                    id="standard-basic"
+                                    label="Product ID"
+                                    variant="standard"
+                                    name="Pcategory_id"
+                                    value={Pcategory_id}
+                                    onChange={handleInputChange}
+                                />
+
+                            </div><br /> <br />
+                            <div>
+                            <TextField
+                                    id="standard-basic"
+                                    label="Category Name"
+                                    variant="standard"
+                                    name="category_name"
+                                    value={category_name}
+                                    onChange={handleInputChange}
+                                />
+
+                            </div>
+
+                            <div className='mt-5'>
+                                <Button color="primary" style={{ color: "#00695c" }} onClick={handleSubmit}>
+                                    Submit
+                                </Button>
+                            </div>
+                        </Item>
+                    </Grid>
+                    <Grid item xs={8}>
+                        <Item style={{ border: '3px solid #00897b', boxShadow: "1px 1px 10px 0px " }}>
+                            <CategoryTable />
+                        </Item>
+                    </Grid>
+                </Grid>
+            </Box>
+        </div>
+
+
+
+<Table striped bordered hover>
+                <thead >
+                    <tr >
+                        <th style={{ backgroundColor: "#00897b" }}>Sr. No.</th>
+                        <th style={{ backgroundColor: "#00897b" }}>Product ID</th>
+                        <th style={{ backgroundColor: "#00897b" }}>Product Name</th>
+                        <th style={{ backgroundColor: "#00897b" }}>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map((item, index) => (
+                        <tr>
+                            <th scope="row">{index + 1}</th>
+                            <td>{item.Pcategory_id}</td>
+                            <td>{item.category_name}</td>
+                            <td>
+                                <Fab color="secondary" aria-label="edit" size="small">
+                                    <EditIcon />
+                                </Fab>
+                                <Fab color="primary" aria-label="view" size="small" className='ms-3'>
+                                    <VisibilityIcon />
+                                </Fab>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </Table>

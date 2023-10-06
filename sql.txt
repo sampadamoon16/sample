@@ -1,0 +1,7 @@
+mysql> select role_name from tbl_admin_role a inner join tbl_admin_role_assign b on a.role_id=b.role_id where uid ="7";
+
+
+UPDATE tbl_admin_role
+JOIN tbl_admin_role_assign ON tbl_admin_role.role_id = tbl_admin_role_assign.role_id
+SET tbl_admin_role.role_name = 'new_role_name'
+WHERE tbl_admin_role_assign.uid = 'your_uid' AND tbl_admin_role_assign.role_id = 'your_role_id';
